@@ -1,0 +1,81 @@
+{
+  "name": "TelemetryReading",
+  "type": "object",
+  "properties": {
+    "site_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "voltage_kv": {
+      "type": "number",
+      "description": "Voltage in kilovolts"
+    },
+    "current_a": {
+      "type": "number",
+      "description": "Current in amperes"
+    },
+    "frequency_hz": {
+      "type": "number",
+      "description": "Grid frequency in Hz"
+    },
+    "power_kw": {
+      "type": "number",
+      "description": "Active power in kW"
+    },
+    "energy_kwh": {
+      "type": "number",
+      "description": "Cumulative energy in kWh"
+    },
+    "power_factor": {
+      "type": "number"
+    },
+    "inverter_temp_c": {
+      "type": "number",
+      "description": "Inverter temperature in Celsius"
+    },
+    "dc_link_voltage_v": {
+      "type": "number",
+      "description": "DC link voltage"
+    },
+    "breaker_status": {
+      "type": "string",
+      "enum": [
+        "CLOSED",
+        "OPEN",
+        "TRIPPED"
+      ]
+    },
+    "relay_event": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "WARNING",
+        "TRIP",
+        "LOCKOUT"
+      ]
+    },
+    "latency_ms": {
+      "type": "number",
+      "description": "SCADA communication latency"
+    },
+    "packet_loss_pct": {
+      "type": "number",
+      "description": "Packet loss percentage"
+    },
+    "thd_pct": {
+      "type": "number",
+      "description": "Total harmonic distortion percentage"
+    },
+    "irradiance_wm2": {
+      "type": "number",
+      "description": "Solar irradiance W/m2"
+    }
+  },
+  "required": [
+    "site_id",
+    "timestamp"
+  ]
+}

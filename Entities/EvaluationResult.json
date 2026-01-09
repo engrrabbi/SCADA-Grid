@@ -1,0 +1,64 @@
+{
+  "name": "EvaluationResult",
+  "type": "object",
+  "properties": {
+    "evaluation_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "evaluation_period_days": {
+      "type": "number"
+    },
+    "total_faults_detected": {
+      "type": "number"
+    },
+    "true_positives": {
+      "type": "number"
+    },
+    "false_positives": {
+      "type": "number"
+    },
+    "false_negatives": {
+      "type": "number"
+    },
+    "true_negatives": {
+      "type": "number"
+    },
+    "precision": {
+      "type": "number"
+    },
+    "recall": {
+      "type": "number"
+    },
+    "f1_score": {
+      "type": "number"
+    },
+    "false_alarm_rate": {
+      "type": "number"
+    },
+    "avg_early_warning_lead_time_min": {
+      "type": "number"
+    },
+    "baseline_detection_time_min": {
+      "type": "number"
+    },
+    "ai_detection_time_min": {
+      "type": "number"
+    },
+    "fault_isolation_time_reduction_pct": {
+      "type": "number"
+    },
+    "downtime_prevented_hr": {
+      "type": "number"
+    },
+    "cost_savings_usd": {
+      "type": "number"
+    },
+    "model_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "evaluation_date"
+  ]
+}

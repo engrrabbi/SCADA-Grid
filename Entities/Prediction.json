@@ -1,0 +1,53 @@
+{
+  "name": "Prediction",
+  "type": "object",
+  "properties": {
+    "site_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "predicted_fault_type": {
+      "type": "string"
+    },
+    "fault_probability": {
+      "type": "number",
+      "description": "Probability 0-1"
+    },
+    "estimated_time_to_failure_min": {
+      "type": "number"
+    },
+    "confidence_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "very_high"
+      ]
+    },
+    "contributing_factors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "model_version": {
+      "type": "string"
+    },
+    "was_accurate": {
+      "type": "boolean",
+      "description": "Post-hoc validation of prediction"
+    },
+    "actual_fault_occurred": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "site_id",
+    "predicted_fault_type",
+    "fault_probability"
+  ]
+}

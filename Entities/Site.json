@@ -1,0 +1,68 @@
+{
+  "name": "Site",
+  "type": "object",
+  "properties": {
+    "site_id": {
+      "type": "string",
+      "description": "Unique site identifier (e.g., TX-BEAUMONT-01)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable site name"
+    },
+    "location": {
+      "type": "string",
+      "description": "Geographic location"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "capacity_mw": {
+      "type": "number",
+      "description": "Installed capacity in megawatts"
+    },
+    "site_type": {
+      "type": "string",
+      "enum": [
+        "solar",
+        "wind",
+        "hybrid",
+        "substation"
+      ],
+      "default": "solar"
+    },
+    "commissioned_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "health_score": {
+      "type": "number",
+      "description": "Current health score 0-100"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "operational",
+        "degraded",
+        "critical",
+        "offline"
+      ],
+      "default": "operational"
+    },
+    "inverter_count": {
+      "type": "number"
+    },
+    "last_maintenance_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "site_id",
+    "name",
+    "location"
+  ]
+}

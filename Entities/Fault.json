@@ -1,0 +1,87 @@
+{
+  "name": "Fault",
+  "type": "object",
+  "properties": {
+    "fault_id": {
+      "type": "string"
+    },
+    "site_id": {
+      "type": "string"
+    },
+    "fault_type": {
+      "type": "string",
+      "enum": [
+        "overvoltage",
+        "undervoltage",
+        "frequency_drift",
+        "harmonic_spike",
+        "phase_imbalance",
+        "inverter_overheat",
+        "dc_instability",
+        "mppt_failure",
+        "scada_latency",
+        "unauthorized_command",
+        "breaker_failure",
+        "relay_malfunction"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "start_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "trigger_condition": {
+      "type": "string",
+      "description": "Rule that triggered the fault"
+    },
+    "observable_symptoms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "affected_equipment": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "resolved",
+        "acknowledged"
+      ],
+      "default": "active"
+    },
+    "resolution_notes": {
+      "type": "string"
+    },
+    "detected_by_ai": {
+      "type": "boolean",
+      "default": false
+    },
+    "detection_lead_time_min": {
+      "type": "number",
+      "description": "Minutes before actual failure AI detected"
+    }
+  },
+  "required": [
+    "site_id",
+    "fault_type",
+    "severity"
+  ]
+}
